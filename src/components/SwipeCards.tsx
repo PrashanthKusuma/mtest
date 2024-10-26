@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Carousel from "../components/Carousel";
+import { image, matches } from "../app/types";
 // import Card from "./Card";
 
-export default function SwipeCards({ matches }) {
+export default function SwipeCards({ matches }: { matches: matches[] }) {
   const [cards, setCards] = useState(matches);
 
   return (
@@ -16,7 +17,21 @@ export default function SwipeCards({ matches }) {
   );
 }
 
-function Card({ id, username, name, images, setCards, cards }) {
+function Card({
+  id,
+  username,
+  name,
+  images,
+  setCards,
+  cards,
+}: {
+  id: number;
+  username: string;
+  name: string;
+  images: image[];
+  cards: matches[];
+  setCards: Dispatch<SetStateAction<matches[]>>;
+}) {
   const x = useMotionValue(0);
   const rotateRaw = useTransform(x, [-150, 150], [-18, 18]);
   const opacity = useTransform(x, [-150, 0, 150], [0, 1, 0]);
@@ -77,11 +92,21 @@ function Card({ id, username, name, images, setCards, cards }) {
           isFront={isFront}
           autoSlide={isFront ? true : false}
           images={images}
+          autoSlideInterval={10000}
         />
 
         <div className="absolute flex bottom-0 h-[57px] w-full bg-gradient-to-t from-black via-[rgba(0,0,0,0.744)] to-transparent">
           <div className="relative w-full h-full flex justify-center items-center">
-            <div className="border flex justify-center items-center absolute left-6 bottom-2 h-[40px] w-[40px] rounded-full bg-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg></div>
+            <div className="border flex justify-center items-center absolute left-6 bottom-2 h-[40px] w-[40px] rounded-full bg-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="24"
+                height="24"
+              >
+                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+              </svg>
+            </div>
             <span className="block text-white text-lg">{name}</span>
           </div>
         </div>

@@ -1,13 +1,20 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { image } from "../app/types";
 
 export default function Carousel({
   username,
   images,
   isFront,
   autoSlide,
-  autoSlideInterval = 10000,
+  autoSlideInterval,
+}: {
+  username: string;
+  images: image[];
+  isFront: boolean;
+  autoSlide: boolean;
+  autoSlideInterval: number;
 }) {
   const [current, setCurrent] = useState(0);
   const prev = () =>
@@ -20,7 +27,7 @@ export default function Carousel({
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
   }, [autoSlide, autoSlideInterval]);
-  console.log(isFront)
+  console.log(isFront);
   return (
     <div className="h-full w-full relative flex justify-center align-middle">
       <Link href={`/users/${username}`}>
