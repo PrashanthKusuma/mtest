@@ -1,6 +1,5 @@
 "use client";
 import React, { use } from "react";
-import { useRouter } from "next/router";
 import { useRouter as navRouter } from "next/navigation";
 
 export default function Users({ params }: { params: { userName: string } }) {

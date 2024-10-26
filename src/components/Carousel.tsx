@@ -6,13 +6,11 @@ import { image } from "../app/types";
 export default function Carousel({
   username,
   images,
-  isFront,
   autoSlide,
   autoSlideInterval,
 }: {
   username: string;
   images: image[];
-  isFront: boolean;
   autoSlide: boolean;
   autoSlideInterval: number;
 }) {
