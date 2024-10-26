@@ -2,8 +2,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-export default function Users({ params }: { params: { userName: string } }) {
-  const { userName } = React.use(params);
+export default function Users({ params }: { params: any }) {
+  const { userName} = React.use<any>(params);
   const router = useRouter();
   return (
     <>
