@@ -6,7 +6,7 @@ export default function Users({ params }: { params: { userName: string } }) {
   //const { userName} = React.use(params);
   // const router = useRouter();
   const navigationrouter = navRouter();
-  const { userName } = use(params);
+  const { userName }: { userName: string } = use(params);
   //{ params }: { params: { userName: string } }
   return (
     <>
@@ -15,7 +15,6 @@ export default function Users({ params }: { params: { userName: string } }) {
           className="w-[50px] h-[50px] m-[10px] rounded-full flex justify-center items-center text-white active:bg-gray-500"
           onClick={() => navigationrouter.back()}
         >
-          {userName}
           <svg
             width="40"
             height="40"
@@ -31,6 +30,7 @@ export default function Users({ params }: { params: { userName: string } }) {
             ></path>
           </svg>
         </span>
+        {userName}
       </div>
     </>
   );
