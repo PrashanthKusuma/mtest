@@ -20,6 +20,7 @@ export default function Carousel({
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
   }, [autoSlide, autoSlideInterval]);
+  console.log(isFront)
   return (
     <div className="h-full w-full relative flex justify-center align-middle">
       <Link href={`/users/${username}`}>
