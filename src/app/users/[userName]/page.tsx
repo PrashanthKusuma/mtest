@@ -1,8 +1,15 @@
 "use client";
 import React, { use } from "react";
 import { useRouter as navRouter } from "next/navigation";
+// import {PageProps} from "next/types.js"
 
-export default function Users({ params }: { params: { userName: string } }) {
+interface MyPageProps {
+  params: {
+    username: string;
+  };
+}
+
+export default function Users({ params }: MyPageProps) {
   //const { userName} = React.use(params);
   // const router = useRouter();
   const navigationrouter = navRouter();
