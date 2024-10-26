@@ -1,5 +1,5 @@
 "use client";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Carousel from "../components/Carousel";
 // import Card from "./Card";
@@ -16,7 +16,7 @@ export default function SwipeCards({ matches }) {
   );
 }
 
-function Card({ id, username, name, bio, interests, images, setCards, cards }) {
+function Card({ id, username, name, images, setCards, cards }) {
   const x = useMotionValue(0);
   const rotateRaw = useTransform(x, [-150, 150], [-18, 18]);
   const opacity = useTransform(x, [-150, 0, 150], [0, 1, 0]);
