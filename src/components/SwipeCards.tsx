@@ -89,7 +89,6 @@ function Card({
       <>
         <Carousel
           username={username}
-          isFront={isFront}
           autoSlide={isFront ? true : false}
           images={images}
           autoSlideInterval={10000}
