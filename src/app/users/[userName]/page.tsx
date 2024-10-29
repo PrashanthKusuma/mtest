@@ -1,9 +1,8 @@
 "use client";
 import React, { use } from "react";
 import { useRouter as navRouter } from "next/navigation";
-// import {PageProps} from "next/types.js"
 
-interface MyPageProps {
+interface MyPageProps{
   params: {
     username: string;
   };
