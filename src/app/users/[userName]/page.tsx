@@ -8,11 +8,11 @@ interface MyPageProps{
   };
 }
 
-export default function Users({ params }: MyPageProps) {
+export default function Users() {//{ params }: MyPageProps
   //const { userName} = React.use(params);
   // const router = useRouter();
-  const navigationrouter = navRouter();
-  const { userName }: { userName: string } = use(params);
+  // const navigationrouter = navRouter();
+  // const { userName }: { userName: string } = use(params);
   //{ params }: { params: { userName: string } }
   return (
     <>
@@ -36,7 +36,7 @@ export default function Users({ params }: MyPageProps) {
             ></path>
           </svg>
         </span>
-        {userName}
+        {/* {userName} */}
       </div>
     </>
   );
