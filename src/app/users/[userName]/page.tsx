@@ -1,12 +1,12 @@
 "use client";
-import React, { use } from "react";
-import { useRouter as navRouter } from "next/navigation";
+// import React, { use } from "react";
+// import { useRouter as navRouter } from "next/navigation";
 
-interface MyPageProps{
-  params: {
-    username: string;
-  };
-}
+// interface MyPageProps{
+//   params: {
+//     username: string;
+//   };
+// }
 
 export default function Users() {//{ params }: MyPageProps
   //const { userName} = React.use(params);
